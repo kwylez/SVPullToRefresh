@@ -14,7 +14,8 @@
 #define fequal(a,b) (fabs((a) - (b)) < FLT_EPSILON)
 #define fequalzero(a) (fabs(a) < FLT_EPSILON)
 
-static CGFloat const SVPullToRefreshViewHeight = 60;
+static CGFloat const SVPullToRefreshViewHeight         = 60;
+static CGFloat const SVPullToRefreshContentInsetOffset = 64.0f;
 
 @interface SVPullToRefreshArrow : UIView
 
@@ -334,7 +335,7 @@ static char UIScrollViewPullToRefreshView;
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     switch (self.position) {
         case SVPullToRefreshPositionTop:
-            currentInsets.top = self.originalTopInset;
+            currentInsets.top = self.originalTopInset + SVPullToRefreshContentInsetOffset;
             break;
         case SVPullToRefreshPositionBottom:
             currentInsets.bottom = self.originalBottomInset;
