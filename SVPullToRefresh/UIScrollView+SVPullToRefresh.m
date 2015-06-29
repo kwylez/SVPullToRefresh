@@ -335,7 +335,7 @@ static char UIScrollViewPullToRefreshView;
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     switch (self.position) {
         case SVPullToRefreshPositionTop:
-            currentInsets.top = self.originalTopInset + SVPullToRefreshContentInsetOffset;
+            currentInsets.top = self.originalTopInset;
             break;
         case SVPullToRefreshPositionBottom:
             currentInsets.bottom = self.originalBottomInset;
